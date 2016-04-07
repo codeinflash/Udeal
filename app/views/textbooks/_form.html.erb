@@ -1,0 +1,44 @@
+
+  <%= form_for(@textbook) do |f| %>
+    <% if @textbook.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@textbook.errors.count, "error") %> prohibited this textbook from being saved:</h2>
+
+        <ul>
+        <% @textbook.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :subject %><br>
+      <%= f.text_field :subject %>
+    </div>
+    <div class="field">
+      <%= f.label :price %><br>
+      <%= f.number_field :price %>
+    </div>
+    <div class="field">
+      <%= f.label :offer %><br>
+      Accept Offer? <a href="#" title="Notice!" data-toggle="popover" data-trigger="hover" data-content="Allows you to negotiate a final price with interested buyers :)"><%= f.check_box :offer %></a>
+    </div>
+    <p>
+    </p>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+
+<!--flash notice for Accept Offer-->
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>

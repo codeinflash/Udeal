@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-4 col-xs-4 col-xs-offset-4">
+
+		<p id="notice"><%= notice %></p>
+
+		<p>
+		  <strong>Title:</strong>
+		  <%= @textbook.title %>
+		</p>
+
+		<p>
+		  <strong>Subject:</strong>
+		  <%= @textbook.subject %>
+		</p>
+
+		<p>
+		  <strong>Price:</strong>
+		  $
+		  <%= @textbook.price %>
+		</p>
+
+		<p>
+		  <strong>Accept Offer:</strong>
+		  <%if @textbook.offer == true%>
+		  	<%='Yes'%>
+		  <%else%>
+		  	<%='No'%>
+		  <%end%>
+		</p>
+
+		<p>
+		  <strong>Time:</strong>
+		  <%= @textbook.created_at.strftime("%d %b. %Y") %>
+		</p>
+
+		<%= link_to 'Edit', edit_textbook_path(@textbook) %> |
+		<%= link_to 'Back to list', textbooks_path %>
+
+</div>
+</div>
+</div>

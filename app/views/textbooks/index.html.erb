@@ -1,0 +1,43 @@
+<div class="container">
+   <div class="row">
+      <div class="col-sm-12">
+                  
+         <table class = "table table-striped">
+            <h1>Listing Textbooks</h1>
+            <caption>Click on a textbook title to view it</caption>
+            
+            <thead>
+               <tr>
+                  <th>Textbook Title</th>
+                  <th>Subject</th>
+                  <th>Price</th>
+                  <th>Accept Offer</th>
+                  <th>Created on</th>
+               </tr>
+            </thead>
+
+  <tbody>
+    <% @textbooks.each do |textbook| %>
+      <tr>
+        <!--<td><%= textbook.title %></td>-->
+        <td><%=link_to "#{textbook.title}", textbook_path(textbook.id) %></td>
+        <td><%= textbook.subject %></td>
+        <td>$<%= textbook.price %></td>
+        <td>
+          <% if textbook.offer == true %>
+            <%= "\u2713" %>
+          <% else %>
+            <%= "\u2715" %>
+        </td><%end%>
+        <td><%= textbook.created_at.strftime("%d %b. %Y") %></td>
+        <!--<td><%= link_to 'Show', textbook %></td>-->
+        <td><%= link_to 'Edit', edit_textbook_path(textbook) %></td>
+        <td><%= link_to 'Destroy', textbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Textbook', new_textbook_path %>

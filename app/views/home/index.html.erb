@@ -1,0 +1,15 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <br><br><br>
+        <div class="text-center">
+            <% if user_signed_in? %>
+              	<h2>Welcome <%= current_user.email %> to Udeal!</h2>
+          	<% else %>
+                <h2>Welcome to Udeal!</h2>
+              	<h2><%= link_to "Signup", new_user_registration_path, class: "btn btn-primary" %></h2>
+          	<% end %>
+        </div>
+      </div>
+    </div>
+  </div>
