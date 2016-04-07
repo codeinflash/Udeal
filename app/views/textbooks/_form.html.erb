@@ -18,7 +18,7 @@
     </div>
     <div class="field">
       <%= f.label :subject %><br>
-      <%= f.text_field :subject %>
+      <a href="#" style="color:#000000" title="Suggest!" data-toggle="popover" data-trigger="hover" data-content="Ex) cs373 or CS373"><%= f.text_field :subject%></a>
     </div>
     <div class="field">
       <%= f.label :price %><br>
@@ -31,7 +31,7 @@
     <p>
     </p>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit :class => "btn btn-primary" %>
     </div>
   <% end %>
 
