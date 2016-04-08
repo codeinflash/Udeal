@@ -11,21 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407063636) do
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "department"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20160408043258) do
 
   create_table "textbooks", force: :cascade do |t|
     t.string   "title"
     t.string   "subject"
     t.integer  "price"
     t.boolean  "offer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "user_email"
+    t.string   "description"
   end
 
   create_table "users", force: :cascade do |t|

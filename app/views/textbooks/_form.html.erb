@@ -18,7 +18,8 @@
     </div>
     <div class="field">
       <%= f.label :subject %><br>
-      <a href="#" style="color:#000000" title="Suggest!" data-toggle="popover" data-trigger="hover" data-content="Ex) cs373 or CS373"><%= f.text_field :subject%></a>
+      <!--<a href="#" style="color:#000000" title="Suggest!" data-toggle="popover" data-trigger="hover" data-content="Ex) cs373 or CS373"> ddddd </a>-->
+      <a style="color:#000000" title="Suggest!" data-toggle="popover" data-trigger="hover" data-content="Ex) cs373 or CS373"><%= f.text_field :subject %></a>
     </div>
     <div class="field">
       <%= f.label :price %><br>
@@ -26,7 +27,11 @@
     </div>
     <div class="field">
       <%= f.label :offer %><br>
-      Accept Offer? <a href="#" title="Notice!" data-toggle="popover" data-trigger="hover" data-content="Allows you to negotiate a final price with interested buyers :)"><%= f.check_box :offer %></a>
+      Accept Offer? <a title="Notice!" data-toggle="popover" data-trigger="hover" data-content="Allows you to negotiate a final price with interested buyers :)"><%= f.check_box :offer %></a>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <a title="Suggest!" data-toggle="popover" data-trigger="hover" data-content="Edition# and ISBN# will be nice:)"><%= f.text_area :description, :class => "form-control", :rows => "3" %></a>
     </div>
     <p>
     </p>
@@ -34,7 +39,6 @@
       <%= f.submit :class => "btn btn-primary" %>
     </div>
   <% end %>
-
 
 <!--flash notice for Accept Offer-->
 <script>
