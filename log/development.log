@@ -19677,3 +19677,41 @@ Processing by HomeController#index as HTML
   Rendered partials/_navbar.html.erb (1.7ms)
   Rendered partials/_flash_notification.html.erb (0.1ms)
 Completed 200 OK in 167ms (Views: 166.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-07 21:26:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (14.9ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+  Rendered partials/_flash_notification.html.erb (0.4ms)
+Completed 200 OK in 614ms (Views: 603.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-07 21:26:33 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+  Rendered partials/_flash_notification.html.erb (0.4ms)
+Completed 200 OK in 146ms (Views: 144.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2016-04-07 21:26:33 -0400
+Processing by HomeController#about as HTML
+  Rendered home/about.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered partials/_navbar.html.erb (1.2ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 139ms (Views: 138.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/textbooks" for 127.0.0.1 at 2016-04-07 21:26:35 -0400
+Processing by TextbooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTextbook Load (0.1ms)[0m  SELECT "textbooks".* FROM "textbooks"
+  Rendered textbooks/index.html.erb within layouts/application (14.2ms)
+  Rendered partials/_navbar.html.erb (0.3ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 171ms (Views: 161.3ms | ActiveRecord: 0.3ms)
