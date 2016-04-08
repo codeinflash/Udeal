@@ -33,11 +33,19 @@
         </li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
+        <%= form_tag(textbooks_path, :method => "get", id: "search-form", html: {class: 'form-group'}) do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search all deals", class: "form-control" %>
+          <%= submit_tag "Search", :class => 'btn btn-default',:title => nil%>
+        <% end %>
+      </form>
+<!--
+      <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Coming Soon!">
+          <input type="text" class="form-control" placeholder="Search all deals">
         </div>
         <button type="submit" class="btn btn-default">Search!</button>
       </form>
+-->
       <ul class="nav navbar-nav navbar-right">
         <% if not user_signed_in? %>
             <%= form_tag user_session_path, method: :post, class: "navbar-form" do %>

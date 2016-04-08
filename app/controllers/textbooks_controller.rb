@@ -2,11 +2,21 @@ class TextbooksController < ApplicationController
   before_action :set_textbook, only: [:show, :edit, :update, :destroy]
   #before_action :set_textbook, only: [:show]
   #before_action :authorize_resource!, except: [:new, :index, :show]
-
+=begin
+  def search
+    @search = Post.search(:include => [:comments]) do
+      keywords(params[:q])
+    end
+  end
+=end
   # GET /textbooks
   # GET /textbooks.json
   def index
     @textbooks = Textbook.all
+    @search = Textbook.search do
+      fulltext params[:search]
+    end
+    @textbooks = @search.results
   end
 
   # GET /textbooks/1
