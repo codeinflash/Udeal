@@ -59878,3 +59878,135 @@ Processing by TextbooksController#index as HTML
   Rendered partials/_navbar.html.erb (0.8ms)
   Rendered partials/_flash_notification.html.erb (0.1ms)
 Completed 200 OK in 172ms (Views: 161.7ms | ActiveRecord: 0.3ms | Solr: 6.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-08 17:32:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (14.9ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+  Rendered partials/_flash_notification.html.erb (0.5ms)
+Completed 200 OK in 785ms (Views: 769.7ms | ActiveRecord: 0.5ms | Solr: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-08 17:32:10 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  Rendered partials/_navbar.html.erb (0.4ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 144ms (Views: 143.3ms | ActiveRecord: 0.2ms | Solr: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2016-04-08 17:32:12 -0400
+Processing by HomeController#about as HTML
+  Rendered home/about.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered partials/_navbar.html.erb (2.0ms)
+  Rendered partials/_flash_notification.html.erb (0.4ms)
+Completed 200 OK in 128ms (Views: 127.2ms | ActiveRecord: 0.1ms | Solr: 0.0ms)
+
+
+Started GET "/textbooks" for 127.0.0.1 at 2016-04-08 17:32:13 -0400
+Processing by TextbooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[32mSOLR Request (3.3ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Textbook"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms)
+
+RSolr::Error::ConnectionRefused (Connection refused - {:data=>"fq=type%3ATextbook&start=0&rows=30&q=*%3A*", :method=>:post, :params=>{:wt=>:ruby}, :query=>"wt=ruby", :headers=>{"Content-Type"=>"application/x-www-form-urlencoded; charset=UTF-8"}, :path=>"select", :uri=>#<URI::HTTP http://localhost:8982/solr/development/select?wt=ruby>, :open_timeout=>nil, :read_timeout=>nil, :retry_503=>nil, :retry_after_limit=>nil}):
+  app/controllers/textbooks_controller.rb:16:in `index'
+
+
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.1ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.0ms)
+
+
+Started GET "/textbooks" for 127.0.0.1 at 2016-04-08 17:32:14 -0400
+Processing by TextbooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[32mSOLR Request (4.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Textbook"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+RSolr::Error::ConnectionRefused (Connection refused - {:data=>"fq=type%3ATextbook&start=0&rows=30&q=*%3A*", :method=>:post, :params=>{:wt=>:ruby}, :query=>"wt=ruby", :headers=>{"Content-Type"=>"application/x-www-form-urlencoded; charset=UTF-8"}, :path=>"select", :uri=>#<URI::HTTP http://localhost:8982/solr/development/select?wt=ruby>, :open_timeout=>nil, :read_timeout=>nil, :retry_503=>nil, :retry_after_limit=>nil}):
+  app/controllers/textbooks_controller.rb:16:in `index'
+
+
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.0ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.9ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/seongkim_macbook/.rvm/gems/ruby-2.2.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (74.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "textbooks"[0m
+  [1m[32mSOLR Request (125.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mTextbook Load (0.1ms)[0m  SELECT  "textbooks".* FROM "textbooks"  ORDER BY "textbooks"."id" ASC LIMIT 50
+[2016-04-08 17:34:20 -0400] Start Indexing
+  [1m[32mSOLR Request (37.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+[2016-04-08 17:34:20 -0400] Completed Indexing. Rows indexed 50. Rows/sec: 1259.1286829513976 (Elapsed: 0.03971 sec.)
+  [1m[32mSOLR Request (43.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "textbooks"[0m
+  [1m[32mSOLR Request (5.3ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mTextbook Load (0.2ms)[0m  SELECT  "textbooks".* FROM "textbooks"  ORDER BY "textbooks"."id" ASC LIMIT 50
+[2016-04-08 17:34:20 -0400] Start Indexing
+  [1m[32mSOLR Request (6.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+[2016-04-08 17:34:20 -0400] Completed Indexing. Rows indexed 50. Rows/sec: 7051.191651389085 (Elapsed: 0.007091 sec.)
+  [1m[32mSOLR Request (26.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-08 17:34:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (16.4ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+  Rendered partials/_flash_notification.html.erb (0.4ms)
+Completed 200 OK in 672ms (Views: 657.6ms | ActiveRecord: 0.9ms | Solr: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-08 17:34:37 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered partials/_navbar.html.erb (0.5ms)
+  Rendered partials/_flash_notification.html.erb (0.0ms)
+Completed 200 OK in 141ms (Views: 140.1ms | ActiveRecord: 0.2ms | Solr: 0.0ms)
+
+
+Started GET "/textbooks" for 127.0.0.1 at 2016-04-08 17:34:40 -0400
+Processing by TextbooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[32mSOLR Request (17.7ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Textbook"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+  [1m[36mTextbook Load (0.2ms)[0m  [1mSELECT "textbooks".* FROM "textbooks" WHERE "textbooks"."id" IN (1, 2, 3)[0m
+  Rendered textbooks/index.html.erb within layouts/application (2.5ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+  Rendered partials/_flash_notification.html.erb (0.4ms)
+Completed 200 OK in 172ms (Views: 133.5ms | ActiveRecord: 0.5ms | Solr: 17.7ms)
+
+
+Started GET "/textbooks?utf8=%E2%9C%93&search=123&commit=Search" for 127.0.0.1 at 2016-04-08 17:34:58 -0400
+Processing by TextbooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"123", "commit"=>"Search"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[32mSOLR Request (13.2ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Textbook"][0m, q: [1m[1m"123"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"title_text^2 subject_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  [1m[36mTextbook Load (0.1ms)[0m  [1mSELECT "textbooks".* FROM "textbooks" WHERE "textbooks"."id" = 3[0m
+  Rendered textbooks/index.html.erb within layouts/application (1.4ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 163ms (Views: 146.0ms | ActiveRecord: 0.2ms | Solr: 13.2ms)
