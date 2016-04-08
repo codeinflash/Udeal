@@ -6,7 +6,6 @@ class CreateTextbooks < ActiveRecord::Migration
       t.integer :price
       t.boolean :offer
       t.datetime :created_at
-      #t.string :user_email
 
       t.timestamps null: false
     end
