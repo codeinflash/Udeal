@@ -59809,3 +59809,72 @@ Processing by TextbooksController#index as HTML
   Rendered partials/_navbar.html.erb (0.9ms)
   Rendered partials/_flash_notification.html.erb (0.1ms)
 Completed 200 OK in 180ms (Views: 171.3ms | ActiveRecord: 0.3ms | Solr: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-08 17:05:32 -0400
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 169ms (Views: 168.6ms | ActiveRecord: 0.1ms | Solr: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2016-04-08 17:05:33 -0400
+Processing by HomeController#about as HTML
+  Rendered home/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_navbar.html.erb (1.4ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 166ms (Views: 165.0ms | ActiveRecord: 0.1ms | Solr: 0.0ms)
+
+
+Started GET "/textbooks" for 127.0.0.1 at 2016-04-08 17:05:35 -0400
+Processing by TextbooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[32mSOLR Request (3.9ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Textbook"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+  [1m[36mTextbook Load (0.3ms)[0m  [1mSELECT "textbooks".* FROM "textbooks" WHERE "textbooks"."id" IN (1, 2, 3)[0m
+  Rendered textbooks/index.html.erb within layouts/application (1.8ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 179ms (Views: 171.1ms | ActiveRecord: 0.4ms | Solr: 3.9ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2016-04-08 17:05:37 -0400
+Processing by HomeController#about as HTML
+  Rendered home/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered partials/_navbar.html.erb (1.4ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 153ms (Views: 152.7ms | ActiveRecord: 0.1ms | Solr: 0.0ms)
+
+
+Started GET "/textbooks" for 127.0.0.1 at 2016-04-08 17:05:43 -0400
+Processing by TextbooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[32mSOLR Request (4.0ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Textbook"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+  [1m[35mTextbook Load (0.2ms)[0m  SELECT "textbooks".* FROM "textbooks" WHERE "textbooks"."id" IN (1, 2, 3)
+  Rendered textbooks/index.html.erb within layouts/application (1.3ms)
+  Rendered partials/_navbar.html.erb (0.6ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 170ms (Views: 161.4ms | ActiveRecord: 0.3ms | Solr: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-08 17:05:47 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 169ms (Views: 168.7ms | ActiveRecord: 0.1ms | Solr: 0.0ms)
+
+
+Started GET "/textbooks" for 127.0.0.1 at 2016-04-08 17:05:49 -0400
+Processing by TextbooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[32mSOLR Request (6.2ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Textbook"][0m, start: [1m[1m0[0m, rows: [1m[1m30[0m, q: [1m[1m"*:*"[0m} ]
+  [1m[36mTextbook Load (0.2ms)[0m  [1mSELECT "textbooks".* FROM "textbooks" WHERE "textbooks"."id" IN (1, 2, 3)[0m
+  Rendered textbooks/index.html.erb within layouts/application (1.3ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+  Rendered partials/_flash_notification.html.erb (0.1ms)
+Completed 200 OK in 172ms (Views: 161.7ms | ActiveRecord: 0.3ms | Solr: 6.2ms)
