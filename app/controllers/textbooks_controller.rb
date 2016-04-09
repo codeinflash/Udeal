@@ -26,23 +26,30 @@ class TextbooksController < ApplicationController
 
   # GET /textbooks/new
   def new
-    @textbook = Textbook.new
+    #@textbook = Textbook.new
+    @textbook = current_user.textbooks.build
   end
 
   # GET /textbooks/1/edit
   def edit
+    if not @textbook.user_email == current_user.email || current_user.email == "codeinflash@gmail.com"
+      redirect_to @textbook
+    end
   end
 
   # POST /textbooks
   # POST /textbooks.json
   def create
-    @textbook = Textbook.new(textbook_params)
+    #@textbook = Textbook.new(textbook_params)
+    @textbook = current_user.textbooks.build(textbook_params)
     @textbook.user_email = current_user.email
 
     respond_to do |format|
       if @textbook.save
-        format.html { redirect_to @textbook, notice: 'Textbook was successfully created.' }
+        #format.html { redirect_to @textbook, notice: 'Textbook was successfully created.' }
+        format.html { redirect_to @textbook }
         #format.json { render :show, status: :created, location: @textbook }
+        flash[:success] = "Textbook was successfully created."
       else
         format.html { render :new }
         format.json { render json: @textbook.errors, status: :unprocessable_entity }
@@ -55,8 +62,10 @@ class TextbooksController < ApplicationController
   def update
     respond_to do |format|
       if @textbook.update(textbook_params)
-        format.html { redirect_to @textbook, notice: 'Textbook was successfully updated.' }
+        #format.html { redirect_to @textbook, notice: 'Textbook was successfully updated.' }
+        format.html { redirect_to @textbook }
         format.json { render :show, status: :ok, location: @textbook }
+        flash[:success] = "Textbook was successfully updated."
       else
         format.html { render :edit }
         format.json { render json: @textbook.errors, status: :unprocessable_entity }
@@ -69,8 +78,10 @@ class TextbooksController < ApplicationController
   def destroy
     @textbook.destroy
     respond_to do |format|
-      format.html { redirect_to textbooks_url, notice: 'Textbook was successfully destroyed.' }
+      #format.html { redirect_to textbooks_url, notice: 'Textbook was successfully destroyed.' }
+      format.html { redirect_to textbooks_url }
       format.json { head :no_content }
+      flash[:alert] = "Textbook was successfully destroyed."
     end
   end
 

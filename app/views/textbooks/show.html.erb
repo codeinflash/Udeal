@@ -38,6 +38,10 @@
 		  <%= @textbook.created_at.strftime("%d %b. %Y") %>
 		</p>
 
+		<p>
+			<%= link_to 'Contact' %>
+		</p>
+
 		<%if @textbook.user_email == current_user.email %>
         	<%= link_to 'Edit', edit_textbook_path(@textbook) %> |
 			<%= link_to 'Back to list', textbooks_path %>

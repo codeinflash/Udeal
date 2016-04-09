@@ -25,16 +25,19 @@
                 <td>$<%= textbook.price %></td>
                 <td>
                   <% if textbook.offer == true %>
-                    <%= "\u2713" %>
+                    <!--<%= "\u2713"%>-->
+                    <p class="offer_yes">&#x2713;</p>
                   <% else %>
-                    <%= "\u2715" %>
-                </td><%end%>
+                    <!--<%= "\u2715" %>-->
+                    <p class="offer_no">&#x2715;</p>
+                  <%end%>
+                </td>
                 <td><%= textbook.created_at.strftime("%d %b. %Y") %></td>
                 <!--<td><%= link_to 'Show', textbook %></td>-->
-                <%if textbook.user_email == current_user.email %>
+                <%if textbook.user_email == current_user.email || (current_user.email == "codeinflash@gmail.com")%>
                   <td><%= link_to 'Edit', edit_textbook_path(textbook) %></td>
-                  <td><%= link_to 'Destroy', textbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <%else %>
+                  <td><%= link_to 'Delete', textbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% else %>
                   <td></td>
                   <td></td>
                 <%end%>
