@@ -13,3 +13,6 @@ end
 #below command does reset everything!
 #rake db:migrate:reset 
 #rake db:reset
+
+#below is the heroku command to reset db
+#heroku pg:reset DATABASE
