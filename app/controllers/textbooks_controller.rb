@@ -2,13 +2,13 @@ class TextbooksController < ApplicationController
   before_action :set_textbook, only: [:show, :edit, :update, :destroy]
   #before_action :set_textbook, only: [:show]
   #before_action :authorize_resource!, except: [:new, :index, :show]
-=begin
+
   def search
     @search = Post.search(:include => [:comments]) do
       keywords(params[:q])
     end
   end
-=end
+  
   # GET /textbooks
   # GET /textbooks.json
   def index
@@ -26,8 +26,8 @@ class TextbooksController < ApplicationController
 
   # GET /textbooks/new
   def new
-    #@textbook = Textbook.new
-    @textbook = current_user.textbooks.build
+    @textbook = Textbook.new
+    #@textbook = current_user.textbooks.build
   end
 
   # GET /textbooks/1/edit
@@ -40,8 +40,8 @@ class TextbooksController < ApplicationController
   # POST /textbooks
   # POST /textbooks.json
   def create
-    #@textbook = Textbook.new(textbook_params)
-    @textbook = current_user.textbooks.build(textbook_params)
+    @textbook = Textbook.new(textbook_params)
+    #@textbook = current_user.textbooks.build(textbook_params)
     @textbook.user_email = current_user.email
 
     respond_to do |format|

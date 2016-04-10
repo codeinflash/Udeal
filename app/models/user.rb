@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :textbooks
+  #has_many :textbooks
 	
   #validates_format_of :email,:with => Devise.email_regexp
   #validates_format_of :email, with: /\@binghamton\.edu/, message: 'binghamton.edu'

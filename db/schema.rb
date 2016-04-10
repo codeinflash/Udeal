@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20160409223022) do
     t.datetime "updated_at",  null: false
     t.string   "user_email"
     t.string   "description"
-    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

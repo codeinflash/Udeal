@@ -41,12 +41,11 @@ gem 'jquery-ui-rails'
 gem 'cancancan', '~> 1.10'
 
 #searcheable sunspot
-#gem 'sunspot_rails'
+gem 'sunspot_rails'
 
-#gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 
-#gem 'progress_bar'
-
+gem 'progress_bar'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
